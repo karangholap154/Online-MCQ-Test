@@ -1,0 +1,733 @@
+/* ===============================
+   PROFESSIONAL LIGHT THEME
+================================ */
+ 
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --border: #e5e7eb;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+ 
+  --green: #16a34a;
+  --red: #dc2626;
+  --blue: #2563eb;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.bg-gradient-info-custom {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+ 
+/* ===============================
+   CARD
+================================ */
+.cardtable {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 100% !important;
+  padding: 20px;
+  height: 100%;
+}
+ 
+/* ===============================
+   ROLE BADGES
+================================ */
+.badge {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  min-width: 60px;
+  text-align: center;
+}
+ 
+.role-hr {
+ 
+  background: #eef2ff;
+  color: #2563eb !important;
+  border: 1px solid #c7d2fe;
+  padding:  5px 10px !important;
+  font-size: 12px !important;
+}
+ 
+.role-admin {
+  background: #f5f3ff;
+  color: #7c3aed !important;
+  border: 1px solid #ddd6fe;
+   padding:  5px 10px !important;
+  font-size: 12px !important;
+}
+ 
+/* ===============================
+   STATUS COLUMN
+================================ */
+.status-cell {
+  width: 150px;
+}
+ 
+.status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+/* Toggle */
+.status-toggle {
+  appearance: none;
+  width: 36px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid var(--red) ;
+  position: relative;
+  cursor: pointer;
+  transition: 0.25s;
+}
+ 
+.status-toggle::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.25s;
+  text-align: center;
+}
+ 
+.status-toggle:checked {
+  border-color: var(--green);
+}
+ 
+.status-toggle:checked::after {
+  background: var(--green);
+  transform: translateX(16px);
+}
+ 
+.status-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+ 
+.status-text.active {
+  color: var(--green);
+}
+ 
+.status-text.inactive {
+  color: var(--red);
+}
+ 
+/* ===============================
+   ACTION BUTTONS
+================================ */
+/* Action button spaces */
+/* ===============================
+   ACTION COLUMN ALIGNMENT
+================================ */
+.actions-btn {
+  display: flex;                 /* align items in a row */
+  align-items: center;           /* vertical center */
+  justify-content: center;       /* center in column */
+  gap: 10px;                     /* equal spacing between items */
+}
+/* Normalize button size */
+.actions-btn .btn {
+  padding: 6px 8px;              /* equal button size */
+  line-height: 1;
+}
+/* Optional: icon alignment */
+.actions-btn i {
+  font-size: 2rem;
+}
+/* Ensure toggle aligns perfectly */
+.actions-btn .status-wrapper-label {
+  display: flex;
+  align-items: center;
+}
+
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.85rem !important;
+
+}
+ 
+.btn-outline-info {
+  --bs-btn-color: var(--blue);
+  --bs-btn-border-color: var(--blue);
+}
+ 
+.btn-outline-danger {
+  --bs-btn-color: var(--red);
+  --bs-btn-border-color: var(--red);
+}
+ 
+/* ===============================
+   RESPONSIVE
+================================ */
+.table-responsive {
+  overflow-x: auto;
+}
+ 
+ 
+ 
+@media (max-width: 768px) {
+  .status-cell {
+    width: 130px;
+  }
+ 
+  .badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+}
+ 
+/* ===============================
+   CUSTOM MODAL – LIGHT THEME (FIXED)
+================================ */
+ 
+/* Backdrop */
+.custom-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4); /* softer */
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+}
+ 
+/* Modal container */
+.custom-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -35%);
+  width: 600px;
+  max-width: 90%;
+  max-height: 90vh;          /* prevents going off screen */
+  overflow-y: auto;          /* scroll if needed */
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  z-index: 1001;
+  color: var(--text-main);
+}
+ 
+/* Header */
+.custom-modal-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+ 
+.custom-modal-header h5 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+ 
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+ 
+.close-btn:hover {
+  color: var(--text-main);
+}
+ 
+/* Body */
+.custom-modal-body {
+  padding: 20px;
+}
+ 
+.custom-modal-body label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--text-muted);
+}
+ 
+.custom-modal-body label span {
+  color: var(--red);
+}
+ 
+/* Inputs */
+.custom-modal-body input,
+.custom-modal-body select {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 0 12px;
+  background: #f9fafb;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+ 
+.custom-modal-body input:focus,
+.custom-modal-body select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+ 
+/* Footer actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+ 
+/* Buttons */
+.btn-cancel {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+ 
+.btn-cancel:hover {
+  background: #f1f5f9;
+}
+ 
+.btn-primary {
+  background: var(--blue);
+  border: none;
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+ 
+ 
+/* reactive the status */
+/* ===============================
+   INACTIVE ROW STATE
+================================ */
+ 
+/* Entire row disabled */
+.inactive-row {
+  opacity: 0.45;                 /* faded */
+  filter: blur(0.6px);          /* blurred */
+  user-select: none;             /* text not selectable */
+}
+ 
+/* Disable ALL interactions inside inactive row */
+.inactive-row td {
+  pointer-events: none;
+}
+ 
+/* EXCEPTION: Enable toggle interaction */
+.inactive-row .toggle-cell {
+  pointer-events: auto;
+  opacity: 1;
+  filter: none;
+}
+ 
+/* Ensure toggle itself stays sharp */
+.inactive-row .status-toggle {
+  filter: none;
+}
+ 
+ 
+ /* ===============================
+   BOOTSTRAP MODAL – PRO LIGHT THEME
+================================ */
+
+/* reactive the status */
+/* ===============================
+   INACTIVE ROW STATE
+================================ */
+
+/* Entire row disabled */
+.inactive-row {
+  opacity: 0.45;                 /* faded */
+  filter: blur(0.6px);          /* blurred */
+  user-select: none;             /* text not selectable */
+}
+
+/* Disable ALL interactions inside inactive row */
+.inactive-row td {
+  pointer-events: none;
+}
+
+/* EXCEPTION: Enable toggle interaction */
+.inactive-row .toggle-cell {
+  pointer-events: auto;
+  opacity: 1;
+  filter: none;
+}
+
+/* Ensure toggle itself stays sharp */
+.inactive-row .status-toggle {
+  filter: none;
+}
+
+/* Modal container */
+.modal-content {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+  animation: modalFadeIn 0.25s ease;
+}
+
+/* Header */
+.modal-header {
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+}
+
+.modal-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Close button */
+.modal-header .btn-close {
+  opacity: 0.6;
+}
+.modal-header .btn-close:hover {
+  opacity: 1;
+}
+
+/* Body */
+.modal-body {
+  padding: 20px;
+}
+
+/* Labels */
+.modal-body .form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Inputs */
+.modal-body .form-control,
+.modal-body .form-select {
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #f9fafb;
+  font-size: 0.85rem;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* Footer */
+.modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  background: #f8fafc;
+}
+
+/* Buttons */
+.modal-footer .btn {
+  border-radius: 8px;
+  font-size: 0.8rem;
+  padding: 7px 16px;
+}
+
+.modal-footer .btn-primary {
+  background: var(--blue);
+  border: none;
+}
+
+.modal-footer .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* .sc-ggWZvA{
+  justify-content: space-evenly !important;
+}
+.sc-ggWZvA i{
+  font-size: 1.3rem;
+} */
+ 
+
+.dots-loader span {
+  height: 10px;
+  width: 10px;
+  margin: 0 3px;
+  background: #0d6efd;
+  display: inline-block;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dots-loader span:nth-child(2){ animation-delay: 0.2s }
+.dots-loader span:nth-child(3){ animation-delay: 0.4s }
+
+@keyframes bounce{
+  to { transform: translateY(-8px); opacity: 0.3; }
+}
+
+
+/* usermanagement */
+/* Professional Switch Toggle */
+.custom-status-toggle .form-check-input {
+    width: 2.8em !important;
+    height: 1.4em !important;
+    cursor: pointer;
+    border: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+}
+
+/* Red for Inactive */
+.custom-status-toggle .form-check-input:not(:checked) {
+    background-color: #ef4444 !important;
+}
+
+/* Green for Active */
+.custom-status-toggle .form-check-input:checked {
+    background-color: #22c55e !important;
+}
+
+/* Avatar Placeholder */
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #e2e8f0;
+    color: #475569;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+/* Role Badges */
+.role-admin { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+.role-hr { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+
+
+
+
+/* Custom Green/Red Professional Switch */
+/* CANDIDATE MANAGEMENT */
+.custom-status-toggle .form-check-input {
+    width: 2.8em !important;
+    height: 1.4em !important;
+    cursor: pointer;
+    border: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+}
+
+/* Inactive state (Force Red) */
+.custom-status-toggle .form-check-input:not(:checked) {
+    background-color: #ef4444 !important; /* Red-500 */
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4));
+}
+
+/* Active state (Force Green) */
+.custom-status-toggle .form-check-input:checked {
+    background-color: #22c55e !important; /* Green-500 */
+    filter: drop-shadow(0 0 2px rgba(34, 197, 94, 0.4));
+}
+
+/* Row separation and spacing */
+.rdt_TableCell {
+    padding: 12px 16px !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* QUESTION MANAGEMENT */
+/* Professional Green/Red Toggle */
+.custom-status-toggle .form-check-input {
+    width: 2.8em !important;
+    height: 1.4em !important;
+    cursor: pointer;
+    border: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+}
+
+/* Inactive: Red */
+.custom-status-toggle .form-check-input:not(:checked) {
+    background-color: #ef4444 !important;
+}
+
+/* Active: Green */
+.custom-status-toggle .form-check-input:checked {
+    background-color: #22c55e !important;
+}
+
+/* Question Type Badges */
+.badge.border-primary { color: #0d6efd; background-color: #f0f7ff; }
+.badge.border-info { color: #0dcaf0; background-color: #f0fcff; }
+
+/* test page*/
+/* Custom Font & Spacing */
+.ls-1 {
+    letter-spacing: 0.5px;
+    font-size: 0.7rem !important;
+}
+
+/* Rounded Cards */
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* Button Hover Animation */
+.transform-hover {
+    transition: all 0.3s ease;
+}
+
+.transform-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2) !important;
+}
+
+/* Background tweak */
+.bg-light {
+    background-color: #f8fafc !important; /* Cleaner grey-blue tint */
+}
+
+/* Custom list item border */
+.border-bottom-light {
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+/* Custom Checkbox focus */
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+/* no wrap class */
+.nowrap {
+  white-space: nowrap;
+}
+
+
+/* searchbar light */
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: inherit !important;
+}
+
+.w-h-40 {
+  width: 40px;
+  height: 40px;
+}
+/* email tool tip */
+/* Allow tooltip to expand based on content */
+.tooltip-inner {
+  max-width: none !important;
+  white-space: nowrap !important;   
+  padding: 6px 10px;
+}
+
+
+/* short code page */
+.bg-gradient-custom {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+}
+
+.otp-input {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: monospace;
+  border-radius: 8px;
+}
+
+.heading-clamp {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+}
+
+
+
+
+
+/*   Assessment Portal Styles */
+.assessment-wrapper {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.otp-input {
+  width: 2.75rem;       
+  height: 3.125rem;      
+  font-size: 1.25rem;    
+  border: 0.125rem solid #e0e0e0;   
+  border-radius: 0.5rem;            
+  transition: all 0.2s ease;        
+}
+
+.otp-input:focus {
+  border-color: #4e73df;
+  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.1);  
+}
+
+.tiny-text {
+  font-size: 0.75rem;   
+}
+
+.extra-tiny-text {
+  font-size: 0.65rem;   
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-0.0625rem);  
+}

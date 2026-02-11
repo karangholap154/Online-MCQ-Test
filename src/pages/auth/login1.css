@@ -1,0 +1,279 @@
+/* PAGE */
+.login-page {
+  min-height: 100vh;
+  background: #f8f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* MOVING BLOBS */
+.blob {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  filter: blur(120px);
+  opacity: 0.55;
+  animation: blobMove 18s infinite alternate ease-in-out;
+}
+
+.blob-red {
+  background: #ff4d4d;
+  top: -120px;
+  left: -120px;
+}
+
+.blob-yellow {
+  background: #ffd84d;
+  bottom: -120px;
+  right: -120px;
+  animation-delay: 3s;
+}
+
+.blob-purple {
+  background: #a78bfa;
+  top: 40%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+@keyframes blobMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(-40px, 60px) scale(1);
+  }
+}
+
+/* CARD */
+.login-container {
+  width: 1100px;
+  height: 620px;
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT VIDEO */
+.login-left {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.13);
+  /* background: rgba(0, 0, 0, 0.6); */
+}
+
+.left-content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  z-index: 2;
+}
+
+.left-content h3 {
+  font-weight: 700;
+}
+
+.left-content p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.shield-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* RIGHT FORM */
+/* Container */
+.minimal-login {
+  padding: 50px 40px;
+  text-align: center;
+  width: 50%;
+}
+
+/* Serif Brand Title (Image-like) */
+  .brand-title {
+    padding-top: 20px;
+    max-width: 270px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    padding-top: 10px;
+    font-size: 0.9rem;
+    /* letter-spacing: 3px; */
+    color: #070707;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+/* Gradient underline like image */
+.brand-underline {
+  width: 140px;
+  height: 2px;
+  margin: 0 auto 12px;
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+  margin-bottom: 28px;
+}
+
+/* Icon Ring */
+.logo-ring {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px dashed rgba(168, 85, 247, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-inner {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-inner i {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* Inputs */
+.form-group label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-bottom: 6px;
+  display: block;
+  text-align: left;
+}
+
+.minimal-input {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  border: 1px solid #e5e7eb;
+}
+
+.minimal-input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+
+/* Password eye */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+/* Gradient Button */
+.gradient-btn {
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  letter-spacing: 0.08em;
+}
+
+.gradient-btn:hover {
+  opacity: 0.95;
+}
+
+/* Footer */
+.footer-text {
+  margin-top: 28px;
+  font-size: 0.65rem;
+  color: #9ca3af;
+}
+
+    /* Hide default browser password reveal and clear buttons */
+  input::-ms-reveal,
+  input::-ms-clear {
+      display: none;
+  }
+ 
+  
+  /* Error tooltip styling */
+  .error-tooltip .tooltip-inner {
+      background-color: #dc3545;
+      color: white;
+  }
+
+  .error-tooltip .tooltip-arrow::before {
+      border-top-color: #dc3545;
+  }
+
+  /* Invalid input styling */
+  .is-invalid {
+      border-color: #dc3545;
+  }
+/* Disable browser default password reveal icons */
+
+/* Chrome / Edge / Brave */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* Chrome, Edge, Safari */
+/* input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+} */
+
+/* Firefox */
+/* input[type="password"] {
+  appearance: none;
+  -moz-appearance: textfield;
+} */
+
