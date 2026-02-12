@@ -65,7 +65,7 @@
   }
 }
 
-/* Small (SM) - 576px and up */
+/* Small (SM) - 576px to 767.98px */
 @media (min-width: 576px) and (max-width: 767.98px) {
   .navbar-responsive {
     padding-left: 0.75rem !important;
@@ -77,7 +77,7 @@
   }
 }
 
-/* Medium (MD) - 768px and up */
+/* Medium (MD) to XL - 768px and up */
 @media (min-width: 768px) {
   .navbar-responsive {
     padding-left: 1rem !important;
@@ -92,23 +92,15 @@
   }
 }
 
-/* Large (LG) - 992px and up */
-@media (min-width: 992px) {
-  .navbar-responsive {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-
-  .navbar-responsive .logo-responsive {
-    height: 40px;
-  }
-}
-
 /* Extra Large (XL) - 1200px and up */
 @media (min-width: 1200px) {
   .navbar-responsive {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
+  }
+
+  .navbar-responsive .logo-responsive {
+    height: 40px;
   }
 }
 
@@ -187,14 +179,6 @@
     padding: 1rem 0.5rem;
   }
 
-  .sidebar.open {
-    transform: translateX(0) !important;
-  }
-
-  .sidebar.closed {
-    transform: translateX(-100%) !important;
-  }
-
   .sidebar.open .sidebar-label {
     display: inline;
   }
@@ -202,14 +186,10 @@
   .sidebar.closed .sidebar-label {
     display: none;
   }
-
-  .sidebar ul li a {
-    padding: 0.75rem 1rem;
-  }
 }
 
-/* Small (SM) - 576px to 767.98px */
-@media (min-width: 576px) and (max-width: 767.98px) {
+/* Small to Medium (SM-MD) - 576px to 991.98px */
+@media (min-width: 576px) and (max-width: 991.98px) {
   .sidebar {
     width: 220px !important;
     padding: 1rem 0.5rem;
@@ -220,49 +200,12 @@
     transform: translateX(0) !important;
   }
 
-  .sidebar.closed {
-    transform: translateX(-100%) !important;
-  }
-
   .sidebar.open .sidebar-label {
     display: inline;
   }
 
   .sidebar.closed .sidebar-label {
     display: none;
-  }
-
-  .sidebar ul li a {
-    padding: 0.75rem 1rem;
-  }
-}
-
-/* Medium (MD) - 768px to 991.98px */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .sidebar {
-    width: 220px !important;
-    padding: 1rem 0.5rem;
-  }
-
-  .sidebar.open {
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15) !important;
-    transform: translateX(0) !important;
-  }
-
-  .sidebar.closed {
-    transform: translateX(-100%) !important;
-  }
-
-  .sidebar.open .sidebar-label {
-    display: inline !important;
-  }
-
-  .sidebar.closed .sidebar-label {
-    display: none !important;
-  }
-
-  .sidebar ul li a {
-    padding: 0.75rem 1rem;
   }
 }
 
